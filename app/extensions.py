@@ -11,4 +11,3 @@ migrate = Migrate()
 jwt = JWTManager()
 mail = Mail()
 cors = CORS()
-

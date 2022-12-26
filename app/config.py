@@ -1,11 +1,11 @@
-import imp
 from os import environ
 from dotenv import load_dotenv, find_dotenv
 
-# Configurações Storage
 dotenv_path = find_dotenv()
 
 load_dotenv(dotenv_path, override=False)
+
+load_dotenv()
 
 AWS_ACCESS_KEY = environ.get('AWS_ACCESS_KEY')
 AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
@@ -18,6 +18,9 @@ AWS_BUCKET_ENDPOINT = environ.get('AWS_BUCKET_ENDPOINT')
 # Configurações Gerais
 class Config:
     
+    # Agendador de Tarefas
+    SCHEDULER_API_ENABLED = True
+
     # Validacoes de senha 
     possiblePasswordErrors = ["", None]
     MINIMUM_PASWORD_LENGHT = 8
@@ -31,7 +34,6 @@ class Config:
     DEBUG = True
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = environ.get("SQLALCHEMY_DATABASE_URI")
-
     
     # Configs JWT
     JWT_SECRET_KEY = environ.get("JWT_SECRET_KEY")
@@ -48,3 +50,6 @@ class Config:
 
     MAIL_PASSWORD = environ.get("MAIL_PASSWORD")
 
+    HOST_FTP = environ.get("HOST_FTP")
+    USER_FTP = environ.get("USER_FTP")
+    PASS_FTP = environ.get("PASS_FTP")
