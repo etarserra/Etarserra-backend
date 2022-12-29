@@ -1,4 +1,4 @@
-# fly.toml file generated for etarserra on 2022-12-26T19:48:12-03:00
+# fly.toml file generated for etarserra on 2022-12-28T19:49:45-03:00
 
 app = "etarserra"
 kill_signal = "SIGINT"
@@ -6,16 +6,6 @@ kill_timeout = 5
 processes = []
 
 [env]
-  HOST_FTP = "162.241.62.181"
-  JWT_SECRET_KEY = "iasdofihawuehgenbivjnorfvnpearijvanskllla"
-  MAIL_PASSWORD = "iforxwhxoaeoffey"
-  MAIL_PORT = 587
-  MAIL_SERVER = "smtp.gmail.com"
-  MAIL_USERNAME = "etarserra.noanswer@gmail.com"
-  PASS_FTP = "6fd6_Acuy0_O"
-  SQLALCHEMY_DATABASE_URI = "mysql+pymysql://etarse34_etarserra:3tAs3rra!@162.241.62.177/etarse34_rea"
-  SQLALCHEMY_TRACK_MODIFICATIONS = 0
-  USER_FTP = "files@etarserra.com"
 
 [experimental]
   allowed_public_ports = []

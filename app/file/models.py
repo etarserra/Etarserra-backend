@@ -14,7 +14,7 @@ class File(BaseModel):
     title = db.Column(db.String(100))
     year = db.Column(db.Integer)
     awarded = db.Column(db.String(100))
-    description = db.Column(db.String(100))
+    description = db.Column(db.String(1000))
 
     authors_associated = db.relationship("Author", secondary=associationAuthorFile, backref='files')
     tags_associated = db.relationship("Tag", secondary=associationTagFile, backref='files')

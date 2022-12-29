@@ -1,7 +1,7 @@
 from app.extensions import db, ma, migrate, jwt, mail, cors
 from app.config import Config
 from flask import Flask
-
+from flask_mysqldb import MySQL
 
 from app.storages.routes import storage_api
 from app.banner.routes import banner_api
@@ -15,9 +15,9 @@ from app.area.routes import area_api
 
 
 def create_app():
-
     app = Flask(__name__)
     app.config.from_object(Config)
+    mysql = MySQL(app)
     jwt.init_app(app)
     mail.init_app(app)
     db.init_app(app)
@@ -35,6 +35,5 @@ def create_app():
     app.register_blueprint(user_api)
     app.register_blueprint(category_api)
     app.register_blueprint(area_api)
-
     
     return app
